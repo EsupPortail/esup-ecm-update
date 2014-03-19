@@ -1,0 +1,29 @@
+<div class="publication_block"
+     xmlns:nxu="http://nuxeo.org/nxweb/util"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:c="http://java.sun.com/jstl/core"
+     xmlns:nxh="http://nuxeo.org/nxweb/html"
+     xmlns:nxd="http://nuxeo.org/nxweb/document">
+
+ 
+ 	<h3 class="summaryTitle">
+      	<h:outputText value="#{messages['label.version.esupversions']}" />
+    </h3>
+<c:if test="#{!currentDocument.isProxy()}">
+	<c:set var="docUUID" value="#{currentDocument.getId()}" />
+	<nxh:outputLink value="site/esupversions/#{docUUID}" target="_tab">
+	            <nxh:graphicImage value="/icons/sh.png" style="vertical-align:middle"
+	              title="#{messages['label.version.esupversions']}" />
+	</nxh:outputLink>
+</c:if>
+<c:if test="#{currentDocument.isProxy()}">
+<nxu:methodResult name="docVersion" value="#{documentManager.getSourceDocument(currentDocument.getRef())}">
+<c:set var="docUUID" value="#{docVersion.getId()}" />
+	<nxh:outputLink value="site/esupversions/#{docUUID}"><nxh:graphicImage value="/icons/sh.png" style="vertical-align:middle"
+	              title="#{messages['label.version.esupversions']}" />  </nxh:outputLink>   
+</nxu:methodResult>
+</c:if>
+		   
+ </div>

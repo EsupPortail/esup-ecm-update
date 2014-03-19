@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: esup-ecm-update project
+Bundle-SymbolicName: org.esup.ecm
+Bundle-Localization: plugin
+Bundle-Vendor: Nuxeo
+Bundle-Category: web
+
+
